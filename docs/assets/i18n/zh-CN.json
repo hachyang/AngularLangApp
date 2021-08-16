@@ -1,0 +1,15 @@
+{
+	"de-DE": "德语",
+	"demo": {
+		"greeting": "{{name}} 你好!",
+		"select": "改变语言",
+		"text": "这是一个用于ngx-translate的简单演示应用程序",
+		"title": "翻译演示"
+	},
+	"en-US": "英语",
+	"pluralization": {
+		"people": "{gender, select, male{他的名字} female{她的名字} other{他们的名字 }} {name}",
+		"things": "那里 {count, plural, =0{没有} one{有} other{有}} {count, plural, =0{} one{一个} other{好几个}} {count, plural, =0{任何东西} one{东西} other{物体}}"
+	},
+	"zh-CN": "中文"
+}

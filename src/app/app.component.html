@@ -1,0 +1,57 @@
+<div>
+  <!-- translation: translation pipe -->
+  <h1>{{ 'demo.title' | translate }}</h1>
+  <label>
+    {{ 'demo.select' | translate }}
+    <select #langSelect (change)="translate.use(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang" translate >{{ lang }}</option>
+    </select>
+  </label>
+</div>
+
+<div>
+  <!-- translation: directive (key as attribute)-->
+  <p [translate]="'demo.text'"></p>
+
+  <!-- translation: directive (key as content of element) -->
+  <p translate>demo.text</p>
+</div>
+<!-- translation: translation pipe -->
+<p>{{ 'demo.greeting' | translate:{name:'Andreas'} }}</p>
+
+<!-- translation: directive (key as attribute) -->
+<p [translate]="'demo.greeting'" [translateParams]="{name: 'Andreas'}"></p>
+
+<!-- translation: directive (key as content of element)-->
+<p translate [translateParams]="{name: 'Andreas'}">demo.greeting</p>
+
+<div><a href="http://192.168.0.43:1880/ui"><span>Go Home</span></a>
+</div>
+           <div>
+
+                <div className="d1">
+                    <div>Last msg Received:</div>
+                    <div> {{ state.msgRecvd | json }} </div>
+                    <div>Number of Msgs Received: {{ state.msgsReceived  }} </div>
+                </div>
+
+                <div className="d1">
+                    <div>last Ctl Msg Received:</div>
+                    <div> {{state.msgCtrl | json }} </div>
+                    <div>Number of Control Msgs Received: {{ state.msgsControl }}</div>
+                </div>
+
+                <div className="d1">
+                    <div>last Msg Sent</div>
+                    <div> {{ state.msgSent | json }} </div>
+                    <div>Number of msgs Sent: {{ state.msgsSent }}</div>
+                </div>
+
+                <div className="d1">
+                    <div>Socket Connected?: {{ state.socketConnectedState }}</div>
+                    <div>uibuilderfe Version: {{ state.feVersion }}</div>
+                    <div>Server Time Offset from browser: {{ state.serverTimeOffset }}</div>
+                </div>
+
+            </div>
+
